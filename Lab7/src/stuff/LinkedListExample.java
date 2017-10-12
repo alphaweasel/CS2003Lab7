@@ -23,8 +23,24 @@ public class LinkedListExample {
 		for (String s : list2elements)
 			list2.add(s);
 
+		// print out the initial states of the lists
+		System.out.println("List 1 initial: ");
+		for (String s : list1)
+			System.out.print(s + " ");
+		System.out.println("\n\nList 2 initial: ");
+		for (String s : list2)
+			System.out.print(s + " ");
+		System.out.println("\n\nList 3 initial: ");
+		for (String s : list3)
+			System.out.print(s + " ");
+
 		// add "OKC" to the first list as the second element (element 1)
 		list1.add(1, "OKC");
+
+		// print out list1 after OKC is added
+		System.out.println("\n\nList 1 with OKC as 2nd element: ");
+		for (String s : list1)
+			System.out.print(s + " ");
 
 		// create iterators
 		ListIterator<String> pointer1 = list1.listIterator();
@@ -42,6 +58,11 @@ public class LinkedListExample {
 				pointer1.next();
 		} // end while
 
+		// print out list1 after the merge
+		System.out.println("\n\nList 1 after merge: ");
+		for (String s : list1)
+			System.out.print(s + " ");
+
 		// reset the pointers
 		pointer1 = list1.listIterator();
 		pointer2 = list2.listIterator();
@@ -57,12 +78,28 @@ public class LinkedListExample {
 				pointer1.next();
 		} // end while
 
+		// print out list1 after removing every second element
+		System.out.println("\n\nList 1 after removing every second word: ");
+		for (String s : list1)
+			System.out.print(s + " ");
+
 		// deep copy
 		// moves pointer2 to the end of the list and copies each element into
 		// the list list2deepcopy
 		while (pointer2.hasNext()) {
 			copyPointer.add(pointer2.next());
-
 		} // end while
+
+		// print out final states of all the lists
+		System.out.println("\n\nList 1 final: ");
+		for (String s : list1)
+			System.out.print(s + " ");
+		System.out.println("\n\nList 2 final: ");
+		for (String s : list2)
+			System.out.print(s + " ");
+		System.out.println("\n\nList 3 (deep copy) final: ");
+		for (String s : list3)
+			System.out.print(s + " ");
+
 	} // end method main
 } // end class LinkedListExample
